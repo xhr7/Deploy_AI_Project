@@ -74,17 +74,17 @@ st.markdown('<div class="custom-navbar">', unsafe_allow_html=True)
 
 col1, col2, col3, col4, col5, col6 = st.columns(6)
 with col1:
-    st.page_link("Gharsa.py", label="الرئيسية")
+    st.markdown('<a href="/" target="_self">الرئيسية</a>', unsafe_allow_html=True)
 with col2:
-    st.page_link("Pages/Plants_info.py", label="تعرف على النباتات")
+    st.markdown('<a href="/Pages/Plants_info" target="_self">تعرف على النباتات</a>', unsafe_allow_html=True)
 with col3:
-    st.page_link("Pages/what_is_the_plant.py", label="ماهي نبتتي؟")
+    st.markdown('<a href="/Pages/what_is_the_plant" target="_self">ماهي نبتتي؟</a>', unsafe_allow_html=True)
 with col4:
-    st.page_link("Pages/Plant_your_plant.py", label="ازرع نبتتك")
+    st.markdown('<a href="/Pages/Plant_your_plant" target="_self">ازرع نبتتك</a>', unsafe_allow_html=True)
 with col5:
-    st.page_link("Pages/Check_your_plant.py", label="افحص نبتتك")
+    st.markdown('<a href="/Pages/Check_your_plant" target="_self">افحص نبتتك</a>', unsafe_allow_html=True)
 with col6:
-    st.page_link("Pages/Team_members.py", label="الأعضاء")
+    st.markdown('<a href="/Pages/Team_members" target="_self">الأعضاء</a>', unsafe_allow_html=True)
 
 st.markdown('</div>', unsafe_allow_html=True)
 
