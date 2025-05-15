@@ -5,7 +5,7 @@ import base64
 # إعدادات الصفحة
 st.set_page_config(page_title="غرسة - الرئيسية", layout="wide")
 
-# إخفاء أشياء ستريملت
+# إخفاء عناصر واجهة ستريملت
 st.markdown("""
     <style>
     #MainMenu, footer, header {visibility: hidden;}
@@ -13,16 +13,17 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# تحميل الشعار
+# تحميل الشعار والخلفية
 script_dir = os.path.dirname(os.path.abspath(__file__))
-logo_path = os.path.join(script_dir, "images", "Logo.png")
-with open(logo_path, "rb") as f:
-    logo_base64 = base64.b64encode(f.read()).decode()
 
-# خلفية الصفحة
-bg_path = os.path.join(script_dir, "images", "Background.png")
-with open(bg_path, "rb") as f:
-    bg_base64 = base64.b64encode(f.read()).decode()
+def load_base64(path):
+    with open(os.path.join(script_dir, path), "rb") as f:
+        return base64.b64encode(f.read()).decode()
+
+logo_base64 = load_base64("images/Logo.png")
+bg_base64 = load_base64("images/Background.png")
+
+# الخلفية
 st.markdown(f"""
     <style>
     .stApp {{
@@ -41,7 +42,7 @@ st.markdown(f"""
     </div>
 """, unsafe_allow_html=True)
 
-# التنقل في الشريط الجانبي
+# الشريط الجانبي
 st.sidebar.markdown("## 🚀 قائمة الصفحات")
 st.sidebar.page_link("Gharsa.py", label="🏠 الرئيسية")
 st.sidebar.page_link("pages/what_is_the_plant.py", label="🔍 ماهي نبتتي؟")
