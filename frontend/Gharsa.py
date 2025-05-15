@@ -47,11 +47,11 @@ col1, col2, col3, col4 = st.columns(4)
 with col1:
     st.markdown('<a href="/" style="text-decoration:none; font-size:22px;">🏠 الرئيسية</a>', unsafe_allow_html=True)
 with col2:
-    st.page_link("pages/what_is_the_plant.py", label="ماهي نبتتي؟", icon="🔍")
+    st.page_link("Pages/what_is_the_plant.py", label="ماهي نبتتي؟", icon="🔍")
 with col3:
-    st.page_link("pages/Check_your_plant.py", label="افحص نبتتك", icon="🪴")
+    st.page_link("Pages/Check_your_plant.py", label="افحص نبتتك", icon="🪴")
 with col4:
-    st.page_link("pages/Plant_your_plant.py", label="ازرع نبتتك", icon="🌱")
+    st.page_link("Pages/Plant_your_plant.py", label="ازرع نبتتك", icon="🌱")
 
 # محتوى ترحيبي
 st.markdown("<h1 style='text-align:center; color:#4d0d0d;'>🌿 أهلاً بك في غرسة</h1>", unsafe_allow_html=True)
