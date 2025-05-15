@@ -45,7 +45,7 @@ st.markdown(f"""
 st.markdown("<br>", unsafe_allow_html=True)
 col1, col2, col3, col4 = st.columns(4)
 with col1:
-    st.page_link("Gharsa.py", label="الرئيسية", icon="🏠")
+    st.markdown('<a href="/" style="text-decoration:none; font-size:22px;">🏠 الرئيسية</a>', unsafe_allow_html=True)
 with col2:
     st.page_link("pages/what_is_the_plant.py", label="ماهي نبتتي؟", icon="🔍")
 with col3:
