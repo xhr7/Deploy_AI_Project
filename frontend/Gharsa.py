@@ -19,49 +19,10 @@ logo_path = os.path.join(script_dir, "images", "Logo.png")
 with open(logo_path, "rb") as f:
     logo_base64 = base64.b64encode(f.read()).decode()
 
-# شريط التنقل البسيط
-st.markdown(f"""
-    <style>
-    .navbar {{
-        display: flex;
-        justify-content: center;
-        gap: 40px;
-        background-color: #ffffffcc;
-        padding: 15px;
-        font-family: 'Marhey', sans-serif;
-        font-size: 22px;
-        direction: rtl;
-        border-radius: 10px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        margin-bottom: 30px;
-    }}
-    .navbar a {{
-        text-decoration: none;
-        color: #333;
-        padding: 8px 15px;
-        border-radius: 6px;
-    }}
-    .navbar a:hover {{
-        background-color: rgba(139,94,60,0.1);
-        color: #8b5e3c;
-    }}
-    </style>
-    <div style="text-align:right; margin-bottom:-30px">
-        <img src="data:image/png;base64,{logo_base64}" style="height: 100px;">
-    </div>
-    <div class="navbar">
-        <a href="/">الرئيسية</a>
-        <a href="#">ماهي نبتتي؟</a>
-        <a href="#">افحص نبتتك</a>
-        <a href="#">ازرع نبتتك</a>
-    </div>
-""", unsafe_allow_html=True)
-
 # خلفية الصفحة
 bg_path = os.path.join(script_dir, "images", "Background.png")
 with open(bg_path, "rb") as f:
     bg_base64 = base64.b64encode(f.read()).decode()
-
 st.markdown(f"""
     <style>
     .stApp {{
@@ -72,6 +33,25 @@ st.markdown(f"""
     }}
     </style>
 """, unsafe_allow_html=True)
+
+# عرض الشعار
+st.markdown(f"""
+    <div style="text-align:right; margin-bottom:-30px">
+        <img src="data:image/png;base64,{logo_base64}" style="height: 100px;">
+    </div>
+""", unsafe_allow_html=True)
+
+# شريط التنقل باستخدام page_link
+st.markdown("<br>", unsafe_allow_html=True)
+col1, col2, col3, col4 = st.columns(4)
+with col1:
+    st.page_link("Gharsa.py", label="الرئيسية", icon="🏠")
+with col2:
+    st.page_link("pages/what_is_the_plant.py", label="ماهي نبتتي؟", icon="🔍")
+with col3:
+    st.page_link("pages/Check_your_plant.py", label="افحص نبتتك", icon="🪴")
+with col4:
+    st.page_link("pages/Plant_your_plant.py", label="ازرع نبتتك", icon="🌱")
 
 # محتوى ترحيبي
 st.markdown("<h1 style='text-align:center; color:#4d0d0d;'>🌿 أهلاً بك في غرسة</h1>", unsafe_allow_html=True)
