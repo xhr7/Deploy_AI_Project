@@ -2,12 +2,9 @@ import os
 import base64
 import streamlit as st
 
-
 script_dir = os.path.dirname(os.path.abspath(__file__))
 
-
 st.set_page_config(page_title="غرسة", layout="wide", initial_sidebar_state="collapsed")
-
 
 st.markdown("""
     <style>
@@ -16,16 +13,12 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-
 st.markdown("""
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Marhey:wght@300;400;500;600;700&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Scheherazade+New&display=swap');
-    
-
     </style>
 """, unsafe_allow_html=True)
-
 
 logo_path = os.path.join(script_dir,"images",  "Logo.png")
 with open(logo_path, "rb") as f:
@@ -39,7 +32,6 @@ st.markdown(f"""
 welcome_icon_path = os.path.join(script_dir,"images",  "welcome_icon.png")
 with open(welcome_icon_path, "rb") as f:
     welcome_icon_base64 = base64.b64encode(f.read()).decode()
-
 
 st.markdown("""
     <style>
@@ -70,23 +62,15 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-st.markdown('<div class="custom-navbar">', unsafe_allow_html=True)
+st.markdown('''<div class="custom-navbar">
+    <a href="/" target="_self">الرئيسية</a>
+    <a href="/Plants_info" target="_self">تعرف على النباتات</a>
+    <a href="/what_is_the_plant" target="_self">ماهي نبتتي؟</a>
+    <a href="/Plant_your_plant" target="_self">ازرع نبتتك</a>
+    <a href="/Check_your_plant" target="_self">افحص نبتتك</a>
+    <a href="/Team_members" target="_self">الأعضاء</a>
+</div>''', unsafe_allow_html=True)
 
-col1, col2, col3, col4, col5, col6 = st.columns(6)
-with col1:
-    st.markdown('<a href="/" target="_self">الرئيسية</a>', unsafe_allow_html=True)
-with col2:
-    st.markdown('<a href="/Pages/Plants_info" target="_self">تعرف على النباتات</a>', unsafe_allow_html=True)
-with col3:
-    st.markdown('<a href="/Pages/what_is_the_plant" target="_self">ماهي نبتتي؟</a>', unsafe_allow_html=True)
-with col4:
-    st.markdown('<a href="/Pages/Plant_your_plant" target="_self">ازرع نبتتك</a>', unsafe_allow_html=True)
-with col5:
-    st.markdown('<a href="/Pages/Check_your_plant" target="_self">افحص نبتتك</a>', unsafe_allow_html=True)
-with col6:
-    st.markdown('<a href="/Pages/Team_members" target="_self">الأعضاء</a>', unsafe_allow_html=True)
-
-st.markdown('</div>', unsafe_allow_html=True)
 
 
 
