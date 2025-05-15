@@ -90,7 +90,7 @@ for key, file in icons.items():
     with open(os.path.join(script_dir,"images", file), "rb") as f:
         icon_base64[key] = base64.b64encode(f.read()).decode()
         
-bg_path = os.path.join(script_dir, "images", "background.png")
+bg_path = os.path.join(script_dir, "images", "Background.png")
 with open(bg_path, "rb") as f:
     bg_base64 = base64.b64encode(f.read()).decode()
 
