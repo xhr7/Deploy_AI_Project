@@ -62,15 +62,16 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-st.markdown('''<div class="custom-navbar">
+st.markdown('''
+<div class="custom-navbar">
     <a href="/" target="_self">الرئيسية</a>
     <a href="/Plants_info" target="_self">تعرف على النباتات</a>
     <a href="/what_is_the_plant" target="_self">ماهي نبتتي؟</a>
     <a href="/Plant_your_plant" target="_self">ازرع نبتتك</a>
     <a href="/Check_your_plant" target="_self">افحص نبتتك</a>
     <a href="/Team_members" target="_self">الأعضاء</a>
-</div>''', unsafe_allow_html=True)
-
+</div>
+''', unsafe_allow_html=True)
 
 
 
