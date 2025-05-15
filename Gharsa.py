@@ -64,4 +64,4 @@ with st.container():
         st.page_link("Pages/Check_your_plant.py", label="افحص نبتتك")
     with col5:
         st.page_link("Pages/Team_members.py", label="الأعضاء")
-    st.markdown('</div>', unsafe_allow_html=True)ل
+    st.markdown('</div>', unsafe_allow_html=True)
