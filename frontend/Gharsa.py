@@ -9,12 +9,12 @@ script_dir = os.path.dirname(os.path.abspath(__file__))
 st.set_page_config(page_title="غرسة", layout="wide", initial_sidebar_state="collapsed")
 
 
-# st.markdown("""
-#     <style>
-#     MainMenu, footer, header {visibility: hidden;}
-#     section[data-testid="stSidebar"], div[data-testid="collapsedControl"] {display: none !important;}
-#     </style>
-# """, unsafe_allow_html=True)
+st.markdown("""
+    <style>
+    #MainMenu, footer, header {visibility: hidden;}
+    section[data-testid="stSidebar"], div[data-testid="collapsedControl"] {display: none !important;}
+    </style>
+""", unsafe_allow_html=True)
 
 
 st.markdown("""
@@ -27,7 +27,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-logo_path = os.path.join(script_dir, "images", "Logo.png")
+logo_path = os.path.join(script_dir,"images",  "Logo.png")
 with open(logo_path, "rb") as f:
     logo_base64 = base64.b64encode(f.read()).decode()
 st.markdown(f"""
@@ -36,13 +36,14 @@ st.markdown(f"""
     </div>
 """, unsafe_allow_html=True)
 
-welcome_icon_path = os.path.join(script_dir, "images", "welcome_icon.png")
+welcome_icon_path = os.path.join(script_dir,"images",  "welcome_icon.png")
 with open(welcome_icon_path, "rb") as f:
     welcome_icon_base64 = base64.b64encode(f.read()).decode()
 
+
 st.markdown("""
     <style>
-    .navbar {
+    .custom-navbar {
         display: flex;
         justify-content: center;
         gap: 40px;
@@ -53,31 +54,43 @@ st.markdown("""
         direction: rtl;
         border-radius: 10px;
         box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        margin-bottom: 20px;
     }
-    .navbar a {
+    .custom-navbar a {
         text-decoration: none;
         color: #333;
         padding: 8px 15px;
         border-radius: 6px;
+        transition: background-color 0.3s ease, color 0.3s ease;
     }
-    .navbar a:hover {
+    .custom-navbar a:hover {
         background-color: rgba(139,94,60,0.1);
         color: #8b5e3c;
     }
-    .active-nav {
-        color: #8b5e3c !important;
-        border-bottom: 2px solid #8b5e3c;
-    }
     </style>
-    <div class="navbar">
-        <a href="/Gharsa" target="_self" class="active-nav">الرئيسية</a>
-        <a href="/Plants_info" target="_self">تعرف على النباتات</a>
-        <a href="/what_is_the_plant" target="_self">ماهي نبتتي؟</a>
-        <a href="/Plant_your_plant" target="_self">ازرع نبتتك</a>
-        <a href="/Check_your_plant" target="_self">افحص نبتتك</a>
-        <a href="/Team_members" target="_self">الأعضاء</a>
-    </div>
 """, unsafe_allow_html=True)
+
+st.markdown('<div class="custom-navbar">', unsafe_allow_html=True)
+
+col1, col2, col3, col4, col5, col6 = st.columns(6)
+with col1:
+    st.page_link("Gharsa.py", label="الرئيسية")
+with col2:
+    st.page_link("Pages/Plants_info.py", label="تعرف على النباتات")
+with col3:
+    st.page_link("Pages/what_is_the_plant.py", label="ماهي نبتتي؟")
+with col4:
+    st.page_link("Pages/Plant_your_plant.py", label="ازرع نبتتك")
+with col5:
+    st.page_link("Pages/Check_your_plant.py", label="افحص نبتتك")
+with col6:
+    st.page_link("Pages/Team_members.py", label="الأعضاء")
+
+st.markdown('</div>', unsafe_allow_html=True)
+
+
+
+
 
 icons = {
     "detect": "detect_plant.png",
@@ -286,7 +299,4 @@ st.markdown(f"""
 </a>
 </div>
 """, unsafe_allow_html=True)
-
-
-
 
